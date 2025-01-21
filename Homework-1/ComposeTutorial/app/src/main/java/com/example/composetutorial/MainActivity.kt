@@ -139,9 +139,13 @@ fun PreviewMessageCard() {
 
 @Composable
 fun Conversation(messages: List<Message>) {
-    LazyColumn {
-        items(messages) { message ->
-            MessageCard(message)
+    Scaffold { paddingValues ->
+        LazyColumn (
+            modifier = Modifier.padding(paddingValues)
+        ){
+            items(messages) { message ->
+                MessageCard(message)
+            }
         }
     }
 }
